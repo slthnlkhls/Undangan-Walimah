@@ -1,0 +1,116 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Undangan Pernikahan Sulthan & Sindi</title>
+  <link href="https://fonts.googleapis.com/css2?family=Marcellus&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Marcellus', serif;
+      background: #f9f9f5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    .header {
+      background: #f3ebe1;
+      padding: 2rem;
+      border-bottom: 4px solid #c7b198;
+    }
+    .header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    .section {
+      padding: 2rem;
+    }
+    .countdown {
+      font-size: 2rem;
+      color: #8b5e3c;
+    }
+    .location a {
+      color: #6b4f2d;
+      text-decoration: none;
+    }
+    .rekening {
+      font-weight: bold;
+      background: #fff3;
+      margin-top: 1rem;
+      display: inline-block;
+      padding: 1rem;
+      border: 1px solid #c7b198;
+      border-radius: 8px;
+    }
+    iframe {
+      margin-top: 2rem;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <h1>Undangan Pernikahan</h1>
+    <p>Sulthan Al Ikhlaasul A'mal & Sindi Utari</p>
+  </div>
+
+  <div class="section">
+    <h2>Bismillāhirrahmānirrahīm</h2>
+    <p>Dengan memohon rahmat dan ridho Allah ﷻ, kami bermaksud menyelenggarakan walimatul ‘ursy:</p>
+    <h3>Sulthan Al Ikhlaasul A'mal</h3>
+    <p>dan</p>
+    <h3>Sindi Utari</h3>
+    <p>Pada:</p>
+    <p><strong>Sabtu, 6 September 2025</strong><br>Jam 08.00 WIB s.d. selesai</p>
+
+    <div class="countdown" id="countdown"></div>
+
+    <div class="location">
+      <p>Tempat:</p>
+      <a href="https://maps.app.goo.gl/Cf9vAwuUkhxkxzKx8" target="_blank">Klik untuk melihat lokasi</a>
+    </div>
+
+    <div class="rekening">
+      Amplop Digital:<br>
+      BCA 2670333127<br>
+      a.n. Sulthan Al Ikhlaasul A'mal
+    </div>
+
+    <div class="rsvp">
+      <p>Silakan konfirmasi kehadiran Anda:</p>
+      <a href="https://wa.me/628XXXXXXXXXX?text=Assalamualaikum,%20Saya%20akan%20hadir%20di%20acara%20pernikahan%20Sulthan%20dan%20Sindi">Klik untuk RSVP via WhatsApp</a>
+    </div>
+
+    <iframe width="100%" height="100" src="https://www.youtube.com/embed/8bWRU2ipOwA?autoplay=1&loop=1&playlist=8bWRU2ipOwA" frameborder="0" allow="autoplay" allowfullscreen></iframe>
+
+    <div class="section">
+      <p>“Baarakallahu laka wa baaraka ‘alaika wa jama’a bainakuma fii khair.”</p>
+      <p>Semoga Allah memberkahimu, baik ketika senang maupun susah dan selalu mengumpulkan kalian berdua dalam kebaikan.</p>
+    </div>
+  </div>
+
+  <script>
+    const eventDate = new Date("2025-09-06T08:00:00").getTime();
+    const countdown = document.getElementById("countdown");
+
+    const x = setInterval(function () {
+      const now = new Date().getTime();
+      const distance = eventDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      countdown.innerHTML = `Hitung Mundur: ${days}h ${hours}j ${minutes}m ${seconds}d`;
+
+      if (distance < 0) {
+        clearInterval(x);
+        countdown.innerHTML = "Acara telah berlangsung";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
